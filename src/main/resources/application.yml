@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: stock-profile-projection
+  graphql:
+    graphiql:
+      enabled: true
+hobbyinvestor:
+  elastic-search:
+    cluster-node: macdaddy.local:9200
+server:
+  port: 9081

@@ -1,0 +1,19 @@
+type Query {
+    companyProfileByTicker(ticker: String): CompanyProfile
+}
+
+type CompanyProfile {
+    ticker: String
+    country: String
+    currency: String
+    estimateCurrency: String
+    exchange: String
+    finnhubIndustry: String
+    ipo: String
+    logo: String
+    marketCapitalization: Float
+    name: String
+    phone: String
+    shareOutstanding: Float
+    weburl: String
+}

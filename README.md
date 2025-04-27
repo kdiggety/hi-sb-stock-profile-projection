@@ -10,7 +10,7 @@ http://localhost:9081/company-service/graphql
 http://localhost:9081/company-service/graphiql?path=/company-service/graphql
 #### Example Query
 ```
-query companyProfileByTicker2 {
+query {
   companyProfileByTicker2(ticker: "BLHI") {
     ticker
     country

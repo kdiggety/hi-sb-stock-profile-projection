@@ -1,5 +1,5 @@
 type Query {
-    companyProfileByTicker(ticker: String): CompanyProfile
+    companyProfileByTicker2(ticker: String): CompanyProfile
 }
 
 type CompanyProfile {

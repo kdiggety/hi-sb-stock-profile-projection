@@ -9,3 +9,5 @@ hobbyinvestor:
     cluster-node: macdaddy.local:9200
 server:
   port: 9081
+  servlet:
+    context-path: /company-service

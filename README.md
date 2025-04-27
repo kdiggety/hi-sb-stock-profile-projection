@@ -1,7 +1,7 @@
 # Company Profile Projection
 
 ### A. Get Company Profile HTTP
-http://localhost:9081/company-service/companyProfile/ticker/BLHI
+http://localhost:9081/company-service/companyProfiles/BLHI
 
 ### B. GraphIQL
 #### API Endpoint
@@ -11,7 +11,7 @@ http://localhost:9081/company-service/graphiql?path=/company-service/graphql
 #### Example Query
 ```
 query {
-  companyProfileByTicker2(ticker: "BLHI") {
+  companyProfileByTicker(ticker: "BLHI") {
     ticker
     country
     currency

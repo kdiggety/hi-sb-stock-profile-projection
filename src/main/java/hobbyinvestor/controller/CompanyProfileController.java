@@ -9,23 +9,24 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RequestMapping("/companyProfile")
+@RequestMapping("/companyProfiles")
 @RestController
 public class CompanyProfileController {
     private final CompanyProfileService companyProfileService;;
 
-    @GetMapping(value = "/ticker/{symbol}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CompanyProfile companyProfileByTicker(@PathVariable String symbol) {
-        CompanyProfile companyProfile = companyProfileService.getCompanyProfile(symbol);
-        return companyProfile;
+    @QueryMapping
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<CompanyProfile> companyProfile(@Argument @RequestParam(required = false) Integer count, @Argument @RequestParam(required = false) Integer page) {
+        return companyProfileService.getCompanyProfile(count, page);
     }
 
     @QueryMapping
-    public CompanyProfile companyProfileByTicker2(@Argument String ticker) {
-        CompanyProfile companyProfile = companyProfileService.getCompanyProfile(ticker);
-        return companyProfile;
+    @GetMapping(value = "/{ticker}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CompanyProfile companyProfileByTicker(@Argument @PathVariable String ticker) {
+        return companyProfileService.getCompanyProfile(ticker);
     }
 }

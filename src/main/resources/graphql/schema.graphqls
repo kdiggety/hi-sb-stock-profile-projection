@@ -1,9 +1,10 @@
 type Query {
-    companyProfileByTicker2(ticker: String): CompanyProfile
+    companyProfiles(count: Int = 10, page: Int = 1): [CompanyProfile]
+    companyProfileByTicker(ticker: String): CompanyProfile
 }
 
 type CompanyProfile {
-    ticker: String
+    ticker: String!
     country: String
     currency: String
     estimateCurrency: String
@@ -12,7 +13,7 @@ type CompanyProfile {
     ipo: String
     logo: String
     marketCapitalization: Float
-    name: String
+    name: String!
     phone: String
     shareOutstanding: Float
     weburl: String
